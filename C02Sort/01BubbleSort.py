@@ -16,7 +16,6 @@ def bubble_sort(list):
     return list
 
 
-#
 def bubble_sort_origin(list):
     list_length = len(list)-1
     

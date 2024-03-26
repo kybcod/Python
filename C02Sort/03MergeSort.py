@@ -18,15 +18,21 @@ def merge_sort(list):
         right_index = 0
         list_index = 0
         
+        #왼쪽 리스트와 오른쪽 리스트에 요소가 남아있는 동안
         while left_index < len(left_half) and right_index < len(right_half):
+            
+             #왼쪽 리스트와 오른쪽 리스트 인덱스 앞에서 부터 비교
             if left_half[left_index] <= right_half[right_index]:
                 list[list_index] = left_half[left_index]
                 left_index += 1
             else:
                 list[list_index] = right_half[right_index]
                 right_index += 1
+            
             list_index += 1
             
+        # 남은 요소들을 결과 리스트에 복사
+        # 왼,오 리스트 중 하나에만 요소가 남을 경우
         while left_index < len(left_half):
             list[list_index] = left_half[left_index]
             left_index += 1
