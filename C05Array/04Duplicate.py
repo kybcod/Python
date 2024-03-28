@@ -28,9 +28,16 @@ def return_notDups(a_list):
             
     return dups
 
+from collections import Counter
+
+def return_dups2(a_list):
+    counter = Counter(a_list)
+    return [item for item, count in counter.items() if count > 1]
+
 
 a_list = ["apple","banana","orange","apple","kiwi"]
-# print(return_dups(a_list)) #['apple']
+print(return_dups(a_list)) #['apple']
+print(return_dups2(a_list)) #['apple']
 print(return_notDups(a_list)) #['apple', 'banana', 'orange', 'kiwi']
 
 
