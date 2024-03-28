@@ -22,8 +22,11 @@ class LinkedList:
         fast = self.head
         while True:
             try:
-                slow = slow.next
-                fast = fast.next
+                slow = slow.next # 포인터 한번 이동
+                fast = fast.next.next # 포인터 두번 이동
+                
+                # 두 노드가 동일한 노드를 가리키는지,
+                # 둘이 만나면 사이클 존재
                 if slow is fast:
                     return True
             except:

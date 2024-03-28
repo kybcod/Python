@@ -23,7 +23,7 @@ class LinkedList:
             if current.data == target:
                 return True
             else:
-                current = current.next
+                current = current.next #다음으로 넘기기
         return False
     
 

@@ -21,10 +21,12 @@ class LinkedList:
         if self.head == target:
             self.head = self.head.next
             return
+        
         current = self.head
-        pre = None
+        previous = None
         while current:
             if current.data == target:
-                pre.next = current.next
-            pre = current
+                #이전 노드의 포인터를 현재 노드의 다음 노드로 변경
+                ppreviousre.next = current.next 
+            previous = current 
             current = current.next
