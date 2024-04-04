@@ -1,16 +1,18 @@
-#유한소수 : 소수점 아래 계속X 유한개
-# 기약분수 : 분모(b)의 소인수가 2,5
-# 분자(a) / 분모(b)
+polynomial = '3x + 7 + x'
+answer = ''
 
-A = "hello"
-B = "ohell"
+xsum = 0
+const = 0
 
-# 
-# 각 문자를 오른족으로 한 칸씩 밀고
-# 맨 마지막 문자는 맨 앞으로 이동
-
-for i in range(len(A)):
-    A = A[-1] + A[:-1] #마지막 문자를 마지막 문자 제외한 나머지 부분과 결합
-    print(A)
-    
-    
+for num in polynomial.split(" + "):
+    if num.isdigit():
+        const += int(num)
+    elif 'x' in num:
+        if num[:-1].isdigit():
+            xsum += int(num[:-1])
+        else: #1은 생략되므로 앞에 숫자가 없다면 +1
+            xsum += 1
+        
+        
+print(const)
+print(xsum)
